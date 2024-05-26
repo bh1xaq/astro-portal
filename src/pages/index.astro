@@ -1,0 +1,53 @@
+---
+import Footer from "../components/Footer.astro";
+import Group from "../components/Group.astro";
+import Sidebar from "../components/Sidebar.astro";
+import { Site } from "../site";
+import lists from "../service-lists.yml";
+
+import "../styles/main.css";
+---
+
+<!doctype html>
+<html lang="zh">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{Site.title}</title>
+		<meta name="keywords" content={Site.keywords} />
+		<meta name="description" content={Site.description} />
+		<meta name="author" content={Site.author} />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="full-screen" content="yes" />
+		<meta name="browsermode" content="application" />
+		<meta name="x5-fullscreen" content="true" />
+		<meta name="x5-page-mode" content="app" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+
+	<body>
+		<div class="container">
+			<aside class="sidebar">
+				<div class="logo">
+					<h1>{Site.title}</h1>
+					<p>{Site.description}</p>
+				</div>
+				<Sidebar />
+			</aside>
+			<main>
+				{
+					lists.map((list: any) => (
+						<Group
+							title={list.title}
+							id={list.id}
+							services={list.services}
+						/>
+					))
+				}
+				<Footer />
+			</main>
+		</div>
+	</body>
+</html>
