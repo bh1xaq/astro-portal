@@ -2,13 +2,17 @@
 
 基于 Astro 的 Poratl 页面
 
+![](public/demo.jpg)
+
 ## 食用指南
 
 你需要关注 service-lists.yml 、 site.ts 和 src/icons/
 
 site.ts 定义了站点相关的配置
-src/icons/ 存放了侧栏的 svg 图标，和 service 使用 id 进行匹配。
-service-lists.yml 定义了分类和列表。
+
+src/icons/ 存放了侧栏的 svg 图标，和 service 使用 id 进行匹配
+
+service-lists.yml 定义了分类和列表
 
 
 ## 命令列表
