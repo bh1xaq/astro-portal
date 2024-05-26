@@ -19,7 +19,7 @@
     - name: ChatGPT
       url: https://chatgpt.com/
       description: OpenAI ChatGPT
-    - name: kimi
+    - name: KiMi
       url: https://kimi.moonshot.cn/
       description: 月之暗面AI助手
     - name: 智谱AI
