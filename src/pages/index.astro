@@ -36,6 +36,7 @@ import "../styles/main.css";
 				</div>
 				<Sidebar />
 			</aside>
+			<button class="open-sidebar-btn">&#9776;</button>
 			<main>
 				{
 					lists.map((list: any) => (
@@ -50,4 +51,26 @@ import "../styles/main.css";
 			</main>
 		</div>
 	</body>
+	<script>
+		// 添加事件监听器，当侧边栏按钮被点击时，显示/隐藏侧边栏
+		const openSidebarBtn = document.querySelector(".open-sidebar-btn");
+		if (openSidebarBtn) {
+			openSidebarBtn.addEventListener("click", () => {
+				const sidebar = document.querySelector(".sidebar");
+				if (sidebar) {
+					sidebar.classList.toggle("show");
+				}
+			});
+		}
+
+		// 添加事件监听器，当侧边栏链接被点击时，隐藏侧边栏
+		document.querySelectorAll(".sidebar a").forEach((item) => {
+			item.addEventListener("click", () => {
+				const sidebar = document.querySelector(".sidebar");
+				if (sidebar) {
+					sidebar.classList.remove("show");
+				}
+			});
+		});
+	</script>
 </html>
